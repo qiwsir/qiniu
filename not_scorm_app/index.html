@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title></title>
+<link href="css/style.css" rel="stylesheet">
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/MobileAPI.js" type="text/javascript"></script>
+<script src="js/scriptjs.js" type="text/javascript"></script>
+</head>
+
+<body onload="loadPage()">
+<div class="container">
+	<div class="learntest" id="learntest">
+		<header>
+			<img class="img_bg" src="web/images/bg01.jpg" width='100%'>
+		</header>
+		<!-- play video -->
+		<div id="video">
+			<div class="main_div" id="video">
+				<img class="img_bg" src="web/images/bg02.jpg" width="100%"/>
+			</div>
+			<div class="video">
+				<video src="web/media/mp4.mp4"  width="83%" controls="controls">
+				Your browser does not support the video tag.
+			</video>
+			</div>
+		</div>
+		<!-- answer questions -->
+		<div class="main_div" id="question1">
+			<p class="title">课后测试</p>
+		</div>
+		<div class="main_div">
+			<div class="passinfo" id="passinfo"></div>
+			
+			<!--单项选择题目，如果是判断题，也可以用这个模块，将选项设置为两个：正确、错误；
+			注意：不同的题目中input的name值应该不同，比如第一道选择题的name="radio1"，第二道选择题的name="radio2"，特别注意这里的值命名。
+			-->
+			<div class="question">
+				<div class="single_option">
+					<dl>
+						<dt><span class="number">1</span>沟通影响能力属于平安胜任素质模型中的哪一个模块：</dt>
+						<dd><input type="radio" name="radio1" value="A">A、想事</dd>
+						<dd><input type="radio" name="radio1" value="B" >B、做事</dd>
+						<dd><input type="radio" name="radio1" value="C" >C、带队伍</dd>
+						<dd><input type="radio" name="radio1" value="D" >D、基础能力</dd>
+					</dl>
+					<!--本题目的答案-->
+					<div class="rightanswer" id="rightanswer">正确答案：<span class="single_option_answer">A</span></div>
+				</div>
+			</div>
+			<!--end-->
+			
+			<!--多项选择题，如果要启用本题，可将注释去除注释符号-->
+			
+			<div class="question">
+				<div class = "multi_option">
+					<dl>
+						<dt><span class="number">2</span>这是多项选择题,正确答案是ABC：</dt>
+						<dd><input type="checkbox" name="checkbox" value="A" >A. 第一个正确选项</dd>
+						<dd><input type="checkbox" name="checkbox" value="B">B. 第二个正确选项</dd>
+						<dd><input type="checkbox" name="checkbox" value="C">C. 第三个正确选项</dd>
+						<dd><input type="checkbox" name="checkbox" value="D">D. 这是一个错误选项</dd>
+					</dl>
+					
+					<!--本题目的答案(注意：下面答案中的都好为半角，也就是英文状态下的)-->
+					
+					<div class="rightanswer" id="rightanswer">正确答案：<span class="multi_option_answer">A,B,C</span></div>
+				</div>
+			</div>
+			<!--end-->
+				
+			<!--匹配题目-->
+			
+			<div class="question">
+				<div class="match_problem">
+					<dl>
+						<dt><span class="number">3</span>请分别指出以下定义对应的是战略前瞻的哪一个能力层级：</dt>
+						<dd><p>A、洞察先机，着眼全局，打破传统的思维和模式，构建差异化全新的经营战略，建立新的长期竞争壁垒。</p>
+								<select id="sel_a" >
+									<option value="O" selected>--请选择--</option>
+									<option value="A">构思战略变革</option>
+									<option value="B">主动承接战略</option>
+									<option value="C">职能/区域战略设计</option>
+									<option value="D">搭建战略规划</option>
+								</select>
+						</dd>
+						<dd>	<p>B、清晰理解公司战略，根据战略把握全年工作的轻重缓急和优先次序，主动寻求更有效的工作方式支持战略实现。</p>
+								<select id="sel_b">
+									<option value="O" selected>--请选择--</option>
+									<option value="A">构思战略变革</option>
+									<option value="B">主动承接战略</option>
+									<option value="C">职能/区域战略设计</option>
+									<option value="D">搭建战略规划</option>
+								</select>
+						</dd>
+						<dd><p>C、根据职能或局部区域的特点和条件，为公司战略制定提出建议，参与组织战略制定研讨，设计所辖职能或区域的发展战略。</p>
+								<select id="sel_c">
+									<option value="O" selected>--请选择--</option>
+									<option value="A">构思战略变革</option>
+									<option value="B">主动承接战略</option>
+									<option value="C">职能/区域战略设计</option>
+									<option value="D">搭建战略规划</option>
+								</select>
+						</dd>
+						<dd><p>D、基于行业竞争格局，定义中长期发展的根本问题和趋势，前瞻地确定战略方向，规划出切实的行动路径，从而不断强化公司竞争优势。</p>
+								<select id="sel_d">
+									<option value="O" selected>--请选择--</option>
+									<option value="A">构思战略变革</option>
+									<option value="B">主动承接战略</option>
+									<option value="C">职能/区域战略设计</option>
+									<option value="D">搭建战略规划</option>
+								</select>
+						</dd>
+					</dl>
+
+					<!--本题目答案，对应匹配结果的项目-->
+					
+					<div class="rightanswer" id="rightanswer">正确答案：<span class="match_problem_answer">A,B,C,D</span></div>
+				</div>
+			</div>
+			
+			<!--end-->
+			
+			<div class="bottoncss">
+				<p><span class="error" id="error">请完成所有题目之后再“提交”结果。</span></p>
+				<p><span class="notpass" id="notpass">这次考试没有通过，请<strong><a href="#top" target="_self">从新学习本课程</a></strong>之后再测试。</span></p>
+				<div class="div_btn">
+					<input type="button" value="提交" class="btn" id="question_btn">
+				</div>
+			</div>
+		</div>
+							   
+		<div class="main_div">
+			<div class="footer" width="100%">
+				<p class="title">推荐学习</p>
+		          <div class="footer_b">
+			          <p>《人才培养能力之 "言传身教"》</p>
+			          <p>《人才培养能力之 "因材施教"》</p>
+			          <p>《人才培养能力之 "梯队建设"》</p>
+			      </div>
+		      </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
